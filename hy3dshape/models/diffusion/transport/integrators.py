@@ -56,7 +56,7 @@ class sde:
 
         try:
             sampler = sampler_dict[self.sampler_type]
-        except:
+        except Exception:
             raise NotImplementedError("Smapler type not implemented.")
     
         return sampler

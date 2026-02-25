@@ -200,7 +200,7 @@ class FastGeometryExtractorV2(BaseGeometryExtractor):
                     try:
                         from diso import DiffDMC
                         self.dmc = DiffDMC(dtype=torch.float32).to(self.device)
-                    except:
+                    except Exception:
                         raise ImportError("Please install diso via `pip install diso`, or set mc_algo to 'mc'")
 
                 torch.cuda.empty_cache()

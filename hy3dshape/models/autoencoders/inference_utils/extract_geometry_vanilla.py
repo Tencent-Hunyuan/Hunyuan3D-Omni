@@ -124,7 +124,7 @@ class VanillaGeometryExtractor(BaseGeometryExtractor):
                     try:
                         from diso import DiffDMC
                         self.dmc = DiffDMC(dtype=torch.float32).to(self.device)
-                    except:
+                    except Exception:
                         raise ImportError("Please install diso via `pip install diso`, or set mc_algo to 'mc'")
                 octree_resolution = 2 ** octree_depth if octree_resolution is None else octree_resolution
                 sdf = grid_logits[0] / octree_resolution
